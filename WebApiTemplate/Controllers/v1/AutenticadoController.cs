@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Security.Claims;
+using System.Web;
 using System.Web.Http;
 
 namespace WebApiTemplate.Controllers.v1
@@ -20,6 +22,10 @@ namespace WebApiTemplate.Controllers.v1
         //[Authorize(Roles = "admin")] // Puedo verificar roles o utilizar un custom authorization filter
         public IHttpActionResult Get()
         {
+            //para obtener los claims del JWT
+            var identity = HttpContext.Current.User.Identity as ClaimsIdentity;
+            var claims = identity.Claims;
+
             var lista = new List<string>
             {
                 "hola",
