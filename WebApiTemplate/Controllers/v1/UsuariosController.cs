@@ -45,6 +45,7 @@ namespace WebApiTemplate.Controllers.v1
         /// <summary>
         /// Elimina un usuario
         /// </summary>
+        /// <param name="id">El identificador del usuario.</param>
         /// <returns>Id del usuario eliminado.</returns>
         /// <response code="200">Eliminación satisfactoria.</response>
         [HttpDelete, Route("{id}")]

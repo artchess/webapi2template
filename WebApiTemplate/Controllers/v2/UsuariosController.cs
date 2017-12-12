@@ -46,6 +46,7 @@ namespace WebApiTemplate.Controllers.v2
         /// <summary>
         /// Elimina un usuario
         /// </summary>
+        /// <param name="id">El identificador del usuario.</param>
         /// <returns>Id del usuario eliminado.</returns>
         /// <response code="200">Eliminación satisfactoria.</response>
         [HttpDelete, Route("{id}")]
@@ -57,6 +58,7 @@ namespace WebApiTemplate.Controllers.v2
         /// <summary>
         /// Obtener usuario por nombre
         /// </summary>
+        /// <param name="nombre">El nombre del usuario.</param>
         /// <returns>El nombre del usuario</returns>
         /// <response code="200">Obtención del usuario satisfactorio.</response>
         [HttpGet, Route("{nombre}")]

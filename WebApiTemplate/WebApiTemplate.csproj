@@ -133,6 +133,7 @@
   <ItemGroup>
     <Compile Include="App_Start\SwaggerDefaultValues.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\v1\AutenticadoController.cs" />
     <Compile Include="Controllers\v1\UsuariosController.cs" />
     <Compile Include="Controllers\v2\UsuariosController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
