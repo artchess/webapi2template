@@ -52,7 +52,7 @@ namespace WebApiTemplate
                                 foreach (var group in apiExplorer.ApiDescriptions)
                                 {
                                     var description =
-                                        "Api con Swagger, Swashbuckle, y API versioning.";
+                                        "Api con Swagger (Swashbuckle), API versioning, OAuth para Autenticación basado en JWT.";
 
                                     if (@group.IsDeprecated)
                                     {
