@@ -15,11 +15,26 @@ https://github.com/dotnet/dotnet-template-samples
 Template Engine (wiki)
 https://github.com/dotnet/templating/wiki
 
-Extensión SideWafflev2:
+Extensión SideWafflev2: 
 https://github.com/ligershark/sidewafflev2
 
 Otro: 
 https://docs.microsoft.com/en-us/visualstudio/extensibility/creating-custom-project-and-item-templates
+
+
+Pasos para crear template:
+
+1.- Installar SideWaffle Creator para visual studio 2017 (http://sidewaffle.com/)
+2.- Una vez instalada la extensión de visual studio damos clic derecho al proyecto que vamos a utilizar como template y seleccionamos "Create Template"
+3.- Agregamos los datos del archivo template.config (se puede modificar mas adelante)
+4.- Modificar la descrpcion del template en template.vstemplate y en template.json, además modificar el parametro SideWaffleNewProjNode para establecer el nodo en el que aparecerá nuestro template
+5.- Excluir el proyecto de la solución y modificar el csproj, justo abajo de la segunda linea poner el siguiente comentario: <!--/-:cdn --> (para corregir un bug de VS)
+6.- Agregamos un nuevo proyecto a la solución en Extensibility -> Template pack project template (SideWaffle) esto creará un proyecto VSIX
+7.- Establecer el proyecto que se acaba de crear como proyecto de inicio (OJO: si no se puede crear el proyecto es posible que el visual studio le falte el Visual Studio SDK que nos permite abrir projectos VSIX)
+8.- Correr la solución, abrirá una instancia experimental de VS 2017 donde podremos probar la creación de un proyecto con el nuevo template
+9.- Una vez que veamos que todo esta correcto, cambiamos la solución a modo Release y compilamos para generar el archivo pack VSIX
+10.- Instalar el nuevo archivo VSIX en la computadora donde se quiera utilizar el nuevo template, se requiere cerrar el VS para poder instalarlo
+mas info: https://www.youtube.com/watch?v=g6az_N95dVM 
 
 
 Para Item Templates:
@@ -28,17 +43,17 @@ https://github.com/ligershark/side-waffle
 https://www.youtube.com/watch?v=h4VaORKgrOw&feature=youtu.be
 
 
-Básicas:
-Swashbuckle -- Swagger
-Newtonsoft.Json -- para parsear respuestas de las APIs a JSON 
-Microsoft.AspNet.WebApi.Owin -- para hostear la web api en un servidor OWIN y proveer acceso adicional a características de OWIN
-Microsoft.Owin.Host.SystemWeb -- para habilitar el servidor owin para correr la api en IIS usando el request pipeline de ASP.NET
-Microsoft.Owin.Cors -- para aceptar requests de origenes de diferentes dominios.
-Microsoft.Owin.Security.OAuth -- para utilizar el workflow de autenticación de OAuth
-Microsoft.Owin.Security.Jwt -- middleware que habilita que la aplicación pueda protejer y validar JWT
-System.IdentityModel.Tokens.Jwt (instalar versión 4.0 es la que se instala con la librería anterior https://github.com/aspnet/AspNetKatana/issues/76#event-1129377509) -- para entender, validar y deserealizar JWT 
-Microsoft.AspNet.WebApi.Versioning -- Librería para manejar facilmente el versionado de api
-Microsoft.AspNet.WebApi.Versioning.ApiExplorer -- Librería para integrar Api Versioning con Swagger
+Librerías Básicas:
+* Swashbuckle -- Swagger
+* Newtonsoft.Json -- para parsear respuestas de las APIs a JSON 
+* Microsoft.AspNet.WebApi.Owin -- para hostear la web api en un servidor OWIN y proveer acceso adicional a características de OWIN
+* Microsoft.Owin.Host.SystemWeb -- para habilitar el servidor owin para correr la api en IIS usando el request pipeline de ASP.NET
+* Microsoft.Owin.Cors -- para aceptar requests de origenes de diferentes dominios.
+* Microsoft.Owin.Security.OAuth -- para utilizar el workflow de autenticación de OAuth
+* Microsoft.Owin.Security.Jwt -- middleware que habilita que la aplicación pueda protejer y validar JWT
+* System.IdentityModel.Tokens.Jwt (instalar versión 4.0 es la que se instala con la librería anterior https://github.com/aspnet/AspNetKatana/issues/76#event-1129377509) -- para entender, validar y deserealizar JWT 
+* Microsoft.AspNet.WebApi.Versioning -- Librería para manejar facilmente el versionado de api
+* Microsoft.AspNet.WebApi.Versioning.ApiExplorer -- Librería para integrar Api Versioning con Swagger
 
 Recomendadas:
 utilizar unity (librería Unity.WebAPI): para integrar el contenedor Unity para IoC
@@ -48,6 +63,3 @@ Documentacion:
 * Las librería para autenticación y autorización con OAuth2 Owin usando JWT se basa en las siguientes ligas:
 http://bitoftech.net/2014/06/01/token-based-authentication-asp-net-web-api-2-owin-asp-net-identity/
 http://bitoftech.net/2014/10/27/json-web-token-asp-net-web-api-2-jwt-owin-authorization-server/
-
-
-<!--/-:cdn -->
