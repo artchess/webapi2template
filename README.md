@@ -1,49 +1,10 @@
+Projecto para template de Web Api 2 con Swagger, Api Versioning y OAuth y Owin utilizando Json Web Tokens
 
+Se puede usar como proyecto inicial para crear microservicios tipo Web Api.
 
-Como crear templates
-https://blogs.msdn.microsoft.com/dotnet/2017/04/02/how-to-create-your-own-templates-for-dotnet-new/
+Más documentación acerca de creación de Proyect Templates y como instalarlo en Visual Studio:  https://github.com/artchess/webapi2template/wiki/Project-Templates 
 
-OJO: necesitas tener instalado el SDK de visual studio 2017
-
-
-Template Engine (repositorio)
-https://github.com/dotnet/templating/
-
-Template Engine (ejemplos)
-https://github.com/dotnet/dotnet-template-samples
-
-Template Engine (wiki)
-https://github.com/dotnet/templating/wiki
-
-Extensión SideWafflev2: 
-https://github.com/ligershark/sidewafflev2
-
-Otro: 
-https://docs.microsoft.com/en-us/visualstudio/extensibility/creating-custom-project-and-item-templates
-
-
-Pasos para crear template:
-
-1.- Installar SideWaffle Creator para visual studio 2017 (http://sidewaffle.com/)
-2.- Una vez instalada la extensión de visual studio damos clic derecho al proyecto que vamos a utilizar como template y seleccionamos "Create Template"
-3.- Agregamos los datos del archivo template.config (se puede modificar mas adelante)
-4.- Modificar la descrpcion del template en template.vstemplate y en template.json, además modificar el parametro SideWaffleNewProjNode para establecer el nodo en el que aparecerá nuestro template
-5.- Excluir el proyecto de la solución y modificar el csproj, justo abajo de la segunda linea poner el siguiente comentario: <!--/-:cdn --> (para corregir un bug de VS)
-6.- Agregamos un nuevo proyecto a la solución en Extensibility -> Template pack project template (SideWaffle) esto creará un proyecto VSIX
-7.- Establecer el proyecto que se acaba de crear como proyecto de inicio (OJO: si no se puede crear el proyecto es posible que el visual studio le falte el Visual Studio SDK que nos permite abrir projectos VSIX)
-8.- Correr la solución, abrirá una instancia experimental de VS 2017 donde podremos probar la creación de un proyecto con el nuevo template
-9.- Una vez que veamos que todo esta correcto, cambiamos la solución a modo Release y compilamos para generar el archivo pack VSIX
-10.- Instalar el nuevo archivo VSIX en la computadora donde se quiera utilizar el nuevo template, se requiere cerrar el VS para poder instalarlo
-mas info: https://www.youtube.com/watch?v=g6az_N95dVM 
-
-
-Para Item Templates:
-
-https://github.com/ligershark/side-waffle
-https://www.youtube.com/watch?v=h4VaORKgrOw&feature=youtu.be
-
-
-Librerías Básicas:
+Librerías Utilizadas (vía Nuget):
 * Swashbuckle -- Swagger
 * Newtonsoft.Json -- para parsear respuestas de las APIs a JSON 
 * Microsoft.AspNet.WebApi.Owin -- para hostear la web api en un servidor OWIN y proveer acceso adicional a características de OWIN
@@ -55,11 +16,11 @@ Librerías Básicas:
 * Microsoft.AspNet.WebApi.Versioning -- Librería para manejar facilmente el versionado de api
 * Microsoft.AspNet.WebApi.Versioning.ApiExplorer -- Librería para integrar Api Versioning con Swagger
 
-Recomendadas:
-utilizar unity (librería Unity.WebAPI): para integrar el contenedor Unity para IoC
+Librerías no utilizadas (recomendadas):
+* Unity.WebAPI para integrar el contenedor Unity para IoC
 implementar Refresh token: http://bitoftech.net/2014/07/16/enable-oauth-refresh-tokens-angularjs-app-using-asp-net-web-api-2-owin/
 
 Documentacion:
-* Las librería para autenticación y autorización con OAuth2 Owin usando JWT se basa en las siguientes ligas:
+* Las implementación para autenticación y autorización con OAuth2 Owin usando JWT se basa en las siguientes ligas, aquí se encontrará la documentación de como crear el servidor de autorización que emite los JWT:
 http://bitoftech.net/2014/06/01/token-based-authentication-asp-net-web-api-2-owin-asp-net-identity/
 http://bitoftech.net/2014/10/27/json-web-token-asp-net-web-api-2-jwt-owin-authorization-server/
