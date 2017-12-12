@@ -49,7 +49,6 @@ namespace WebApiTemplate
                     },
                     //Provider = new CustomOauthJwtAuthenticationProvider(); // para agregar autenticación adicional para autenticar o validar tokens usando un proveedor de autenticación costumizado ver: https://stackoverflow.com/questions/35586663/how-to-apply-custom-validation-to-jwt-token-on-each-request-for-asp-net-webapi
                 });
-
         }
     }
 }
