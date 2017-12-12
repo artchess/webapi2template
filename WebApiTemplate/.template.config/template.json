@@ -1,0 +1,23 @@
+{
+  "author": "Arturo Ferreiro",
+  "classifications": [],
+  "description": "Template con Swagger, Api Versioning, OAuth basado en autenticación por Json Web Token.",
+  "name": "Web Api Project Template",
+  "defaultName": "WebApiProject",
+  "identity": "WebApi2.Template.CSharp",
+  "groupIdentity": "WebApi2.Template",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "shortName": "webapi2template",
+  "sourceName": "WebApiTemplate",
+  "guids": [
+    "{2FEE4E35-4507-4CB4-8065-D7B3443467DD}"
+  ],
+  "primaryOutputs": [
+    {
+      "path": "WebApiTemplate.csproj"
+    }
+  ]
+}
