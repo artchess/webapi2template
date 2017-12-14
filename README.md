@@ -1,4 +1,4 @@
-Projecto para template de Web Api 2 con Swagger, Api Versioning y OAuth y Owin utilizando Json Web Tokens
+Proyecto para template de Web Api 2 con Swagger, Api Versioning y OAuth y Owin utilizando Json Web Tokens
 
 Se puede usar como proyecto inicial para crear microservicios tipo Web Api.
 
